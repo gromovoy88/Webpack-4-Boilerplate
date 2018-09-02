@@ -25,7 +25,22 @@ module.exports = {
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/,
-        loader: "file-loader?name=/assets/img/[name].[ext]"
+        use: [
+          "file-loader?name=/assets/img/[name].[ext]",
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              }
+            },
+          }
+        ]
       }
     ]
   },
