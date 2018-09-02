@@ -1,8 +1,7 @@
-import "./scss/main.scss";
-import "jquery";
-import "popper.js";
-import "bootstrap";
-import "./assets/img/img.jpg";
-import "./assets/img/StockSnap_GRC8GAL62V.jpg";
+import "./scss/main.scss"
+import "jquery"
+import "popper.js"
+import "bootstrap"
+import "./assets/img/img.jpg"
 
-console.log("hello, world");
+console.log("hello, world")
