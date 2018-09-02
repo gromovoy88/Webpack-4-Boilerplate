@@ -26,19 +26,27 @@ module.exports = {
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/,
         use: [
-          "file-loader?name=/assets/img/[name].[ext]",
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]'
+            } 
+          },
           {
             loader: 'image-webpack-loader',
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 65
+                quality: 75
+              },
+              optipng: {
+                enabled: false,
               },
               pngquant: {
-                quality: '65-90',
-                speed: 4
+                quality: '70',
+                speed: 2
               }
-            },
+            }
           }
         ]
       }
